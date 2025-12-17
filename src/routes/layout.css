@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&family=IBM+Plex+Serif:ital@0;1&display=swap');
+@import 'tailwindcss';
+
+@theme {
+	--font-mono: 'IBM Plex Mono', monospace;
+	--font-serif: 'IBM Plex Serif', serif;
+}
+
+@layer base {
+	* {
+		@apply font-mono;
+	}
+
+	button,
+	a {
+		@apply font-serif italic;
+	}
+}
+
+.ibm-plex-mono-medium {
+	font-family: 'IBM Plex Mono', monospace;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.ibm-plex-mono-regular-italic {
+	font-family: 'IBM Plex Mono', monospace;
+	font-weight: 400;
+	font-style: italic;
+}
+
+.ibm-plex-serif-regular {
+	font-family: 'IBM Plex Serif', serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.ibm-plex-serif-regular-italic {
+	font-family: 'IBM Plex Serif', serif;
+	font-weight: 400;
+	font-style: italic;
+}
