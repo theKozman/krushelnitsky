@@ -1,8 +1,9 @@
 <script lang="ts">
 	import microchel1 from '$lib/assets/img/placeholders/microchel-1.png';
 	import microchel2 from '$lib/assets/img/placeholders/microchel-2.png';
+	import type { ClassValue } from 'svelte/elements';
 	type Props = {
-		class?: string;
+		class?: ClassValue;
 	};
 
 	const { class: className }: Props = $props();

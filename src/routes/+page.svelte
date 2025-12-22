@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Footer, Header, Hero, Menu } from '$lib/components';
+	import HeroRibbon from '$lib/components/HeroRibbon/HeroRibbon.svelte';
 	import Microchel from '$lib/components/Microchel/Microchel.svelte';
 </script>
 
@@ -9,13 +10,18 @@
 
 	<!-- MAIN -->
 	<div class="flex grow">
-		<Header />
+		<div class="flex w-1/4 max-w-120 min-w-62.5 flex-col">
+			<Header />
+			<Menu />
+		</div>
 
 		<!-- HERO -->
-		<Hero />
+		<div class="flex h-full grow flex-col">
+			<Hero />
+			<HeroRibbon />
+		</div>
 	</div>
 	<!-- MENU -->
-	<Menu />
 
 	<Footer />
 </section>

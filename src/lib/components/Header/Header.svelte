@@ -2,7 +2,7 @@
 	import SliderButton from './SliderButton.svelte';
 </script>
 
-<div class="relative h-full w-1/4 max-w-120 min-w-62.5 border-r border-black bg-pink-500">
+<div class="relative grow border-r border-black bg-pink-500">
 	<!-- VIDEO CONTAINER -->
 	<div class="h-full w-full bg-[url($lib/assets/img/placeholders/header.jpg)] bg-cover"></div>
 
