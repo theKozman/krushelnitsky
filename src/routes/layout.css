@@ -4,6 +4,9 @@
 @theme {
 	--font-mono: 'IBM Plex Mono', monospace;
 	--font-serif: 'IBM Plex Serif', serif;
+
+	--menu-height: 160px;
+	--footer-height: 64px;
 }
 
 @layer base {

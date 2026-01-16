@@ -1,3 +1,4 @@
+export { default as PageTemplate } from './PageTemplate/PageTempalte.svelte';
 export { default as Header } from './Header/Header.svelte';
 export { default as Footer } from './Footer/Footer.svelte';
 export { default as Menu } from './Menu/Menu.svelte';

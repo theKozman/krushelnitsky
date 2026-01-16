@@ -7,7 +7,7 @@
 	import preview4 from '$lib/assets/img/works/preview-4.jpg';
 </script>
 
-<div class="flex h-40 w-full justify-stretch border-y border-black">
+<div class="flex h-40 w-full justify-stretch border-t border-black">
 	<RibbonItem src={preview1} alt="work-preview" />
 	<RibbonItem src={preview2} alt="work-preview" />
 	<RibbonItem src={preview3} alt="work-preview" />
