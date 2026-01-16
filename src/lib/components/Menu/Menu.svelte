@@ -4,7 +4,7 @@
 	import { slide, fly, fade } from 'svelte/transition';
 	import NavLink from './NavLink.svelte';
 
-	let isOpen = $state(true);
+	let isOpen = $state(false);
 </script>
 
 <div class="relative z-30 flex h-(--menu-height) border-y border-black bg-white">
