@@ -1,12 +1,8 @@
 <script lang="ts">
-	import './layout.css';
-	import favicon from '$lib/assets/favicon.svg';
 	import { setMenuState } from '$lib/stores';
 	import { Footer, Microchel } from '$lib';
 	import { page } from '$app/state';
 	import { EPages } from '$lib/pages';
-
-	type Props = {};
 
 	let { children } = $props();
 
