@@ -12,19 +12,19 @@
 <section
 	class="relative flex h-[calc(100svh-var(--footer-height))] flex-col items-start justify-between border border-black"
 >
-	<div class="w-full px-6">
-		<div class="flex items-end justify-start gap-12 align-middle">
+	<div class="flex h-full w-full flex-col justify-center px-6">
+		<div class="flex w-full items-end justify-start gap-12 align-middle">
 			{@render name('Богдан', ['leading-[0.75]!'])}
 			<p class="max-w-84">
 				Усі мої роботи створені з нульовим або мінімальним бюджетом. Кожна з них була викликом, але
 				саме такі умови допомагають знаходити нестандартні рішення та робити щось справді особливе.
 			</p>
 		</div>
-		<div class="flex justify-center">
+		<div class="flex w-full justify-center">
 			{@render name('Крушель-')}
 		</div>
-		<div class="flex items-end justify-end gap-12">
-			<p class="h-full max-w-82 grow">
+		<div class="flex w-full items-end justify-end gap-12">
+			<p class="max-w-82">
 				Режисер із 20-ма різноплановими роботами, що поєднують естетику 70-х–90-х років із сучасними
 				тенденціями. Постійно в пошуках нових форм вираження в кіно.
 			</p>
