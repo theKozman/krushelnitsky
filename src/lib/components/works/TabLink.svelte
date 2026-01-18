@@ -7,7 +7,13 @@
 	const { label, client, anchor }: Props = $props();
 </script>
 
-<a href={`${page.url.pathname}#${anchor}`} class="flex justify-between not-italic active:italic">
+<a
+	href={`${page.url.pathname}#${anchor}`}
+	class={[
+		'flex justify-between not-italic active:italic',
+		page.url.hash.split('#')[1] === anchor && 'text-[#1321E8] italic!'
+	]}
+>
 	<span class="max-w-24">{label}</span>
 
 	<div class="flex max-w-34 flex-wrap">
