@@ -1,6 +1,6 @@
 export enum EPages {
 	HOME = '/',
-	WORKS = '/works',
+	WORKS = '/works#make-love-not-babies',
 	FILM = '/film',
 	ABOUT = '/about'
 }

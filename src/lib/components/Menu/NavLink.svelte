@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import classNames from 'classnames';
 	import type { Snippet } from 'svelte';
 
@@ -15,6 +16,7 @@
 <a
 	class={classNames(
 		'flex h-full grow cursor-pointer items-center justify-center border-r border-black text-[40px] not-italic last:border-none hover:text-[#1321E8] hover:italic',
+		page.url.pathname === href.split('#')[0] && 'text-[#1321E8] italic!',
 		className
 	)}
 	{href}

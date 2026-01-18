@@ -37,8 +37,8 @@
 			<Menu />
 		</div>
 
-		<SubmenuRibbon class="border-none!">
-			<div class="flex w-full items-center justify-between self-start pr-6 pl-4">
+		<SubmenuRibbon class="w-auto! grow! border-none!">
+			<div class="flex grow items-center justify-between self-start pr-6 pl-4">
 				<p class="flex flex-col">
 					Gear:
 					<span>SONY A7III </span>

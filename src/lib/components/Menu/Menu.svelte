@@ -26,6 +26,7 @@
 			in:slide={{ axis: 'x', duration: 350 }}
 			out:slide={{ axis: 'x', delay: 200 }}
 			class="absolute left-full flex h-full w-[75svw] border-t border-black bg-white"
+			data-sveltekit-preload-data="hover"
 		>
 			<img
 				in:fly={{ delay: 280, y: 200, duration: 300 }}
