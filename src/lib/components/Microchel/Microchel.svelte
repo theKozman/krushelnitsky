@@ -10,7 +10,7 @@
 </script>
 
 <figure aria-label="3d bogdan rotating in T-pose" class={['w-22', className]}>
-	<a href={EPages.ABOUT}>
+	<a href={EPages.ABOUT} draggable="false">
 		<img
 			width="88"
 			height="120"
