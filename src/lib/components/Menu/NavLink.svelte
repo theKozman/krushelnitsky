@@ -9,6 +9,7 @@
 	};
 
 	const { href, class: className, children }: Props = $props();
+	// TODO: current path link
 </script>
 
 <a

@@ -11,7 +11,7 @@
 </script>
 
 <div class="flex grow">
-	<div class="flex w-1/4 max-w-120 min-w-62.5 flex-col">
+	<div class="flex w-1/4 max-w-120 min-w-62.5 flex-col justify-end">
 		{@render sidebar?.()}
 		<Menu />
 	</div>

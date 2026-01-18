@@ -3,11 +3,12 @@
 
 	import { slide, fly, fade } from 'svelte/transition';
 	import NavLink from './NavLink.svelte';
+	import { EPages } from '$lib/pages';
 
 	let isOpen = $state(false);
 </script>
 
-<div class="relative z-30 flex h-(--menu-height) border-y border-black bg-white">
+<div class="relative z-30 flex h-(--menu-height) border-t border-black bg-white">
 	<!-- MENU BUTTON -->
 	<button
 		class={[
@@ -22,21 +23,21 @@
 	<!-- NAV -->
 	{#if isOpen}
 		<nav
-			in:slide={{ axis: 'x', duration: 400 }}
-			out:slide={{ axis: 'x', delay: 300 }}
-			class="absolute left-full flex h-full w-[75vw] bg-white"
+			in:slide={{ axis: 'x', duration: 350 }}
+			out:slide={{ axis: 'x', delay: 200 }}
+			class="absolute left-full flex h-full w-[75svw] border-t border-black bg-white"
 		>
 			<img
-				in:fly={{ delay: 350, y: 200 }}
-				out:fly={{ y: 200 }}
-				class="absolute top-0 left-1/6 z-10 max-w-89.5 -translate-y-full"
+				in:fly={{ delay: 280, y: 200, duration: 300 }}
+				out:fly={{ y: 200, duration: 250 }}
+				class="absolute -top-px left-1/6 z-10 max-w-89.5 -translate-y-full"
 				src={bohdanTV}
 				alt="Bohdan Krushelnitsky with a cig in mouth holding a retro tv like he is trying to sell it to you for not that reasonable price"
 			/>
-			<NavLink href="/" class="grow">Головна</NavLink>
-			<NavLink href="/" class="grow">Роботи</NavLink>
-			<NavLink href="/" class="grow">Фільм</NavLink>
-			<NavLink href="/" class="grow">Інфо</NavLink>
+			<NavLink href={EPages.HOME} class="w-full">Головна</NavLink>
+			<NavLink href={EPages.WORKS} class="w-full">Роботи</NavLink>
+			<NavLink href={EPages.FILM} class="w-full">Фільм</NavLink>
+			<NavLink href={EPages.ABOUT} class="w-full">Інфо</NavLink>
 		</nav>
 	{/if}
 </div>
