@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Menu } from '$lib/components';
+	import { Menu, Ornament, SubmenuRibbon } from '$lib/components';
 	import type { ClassValue } from 'svelte/elements';
 </script>
 
@@ -32,9 +32,26 @@
 		</div>
 	</div>
 
-	<div class="w-full">
+	<div class="flex w-full">
 		<div class="w-1/4 max-w-120 min-w-62.5">
 			<Menu />
 		</div>
+
+		<SubmenuRibbon class="border-none!">
+			<div class="flex w-full items-center justify-between self-start pr-6 pl-4">
+				<p class="flex flex-col">
+					Gear:
+					<span>SONY A7III </span>
+					<span>SONY DCR-VX1000 </span>
+					<span>IPHONE 14 pro </span>
+				</p>
+
+				<div class="flex gap-4">
+					<Ornament variant="blaba" />
+					<Ornament variant="bleba" />
+					<Ornament variant="bliba" />
+				</div>
+			</div>
+		</SubmenuRibbon>
 	</div>
 </section>
