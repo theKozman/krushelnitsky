@@ -1,5 +1,16 @@
+<script lang="ts">
+	import type { SvelteHTMLElements } from 'svelte/elements';
+
+	type Props = SvelteHTMLElements['div'];
+
+	const { class: className, ...props } = $props();
+</script>
+
 <footer
-	class="relative z-50 flex h-(--footer-height) w-full justify-between gap-5 bg-white px-6 py-5"
+	class={[
+		'relative z-50 flex h-(--footer-height) w-full justify-between gap-5 bg-white px-6 py-5 ',
+		className
+	]}
 >
 	<div class="w-1/4">Богдан Крушельницький, Film Director</div>
 	<a

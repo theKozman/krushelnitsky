@@ -10,8 +10,8 @@
 	let { children, sidebar }: Props = $props();
 </script>
 
-<div class="flex grow items-stretch">
-	<div class="flex w-1/4 max-w-120 min-w-62.5 flex-col justify-end">
+<div class="flex grow flex-col items-stretch md:flex-row">
+	<div class="flex w-full flex-col justify-end md:w-1/4 md:max-w-120 md:min-w-80">
 		{@render sidebar?.()}
 		<Menu />
 	</div>

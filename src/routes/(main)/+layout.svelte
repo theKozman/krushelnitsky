@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { setMenuState } from '$lib/stores';
+	import { setIsMobileState, setMenuState } from '$lib/stores';
 	import { Footer, Microchel } from '$lib';
 	import { page } from '$app/state';
 	import { EPages } from '$lib/pages';
@@ -19,6 +19,7 @@
 	let { children } = $props();
 
 	setMenuState();
+	setIsMobileState();
 </script>
 
 <main class="">
@@ -29,5 +30,5 @@
 		]}
 	/>
 	{@render children()}
-	<Footer />
+	<Footer class="max-md:hidden" />
 </main>

@@ -15,7 +15,7 @@
 
 <a
 	class={classNames(
-		'flex h-full grow cursor-pointer items-center justify-center border-r border-black text-[40px] not-italic last:border-none hover:text-[#1321E8] hover:italic',
+		'flex cursor-pointer items-center justify-center text-[40px] not-italic last:border-none hover:text-[#1321E8] hover:italic md:h-full md:grow md:border-r md:border-black',
 		page.url.pathname === href.split('#')[0] && 'text-[#1321E8] italic!',
 		className
 	)}

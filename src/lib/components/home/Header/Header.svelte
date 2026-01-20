@@ -2,9 +2,11 @@
 	import SliderButton from './SliderButton.svelte';
 </script>
 
-<div class="relative grow border-r border-black bg-pink-500">
+<div class="relative grow border-r border-black">
 	<!-- VIDEO CONTAINER -->
-	<div class="h-full w-full bg-[url($lib/assets/img/placeholders/header.jpg)] bg-cover"></div>
+	<div
+		class="h-[calc(100svh-var(--mobile-menu-height))] w-full bg-[url($lib/assets/img/placeholders/header.jpg)] bg-cover md:h-full"
+	></div>
 
 	<!-- OVERLAY -->
 	<div

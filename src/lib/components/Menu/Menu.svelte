@@ -4,11 +4,22 @@
 	import { slide, fly, fade } from 'svelte/transition';
 	import NavLink from './NavLink.svelte';
 	import { EPages } from '$lib/pages';
+	import { browser } from '$app/environment';
+	import { getIsMobileState } from '$lib/stores';
+
+	if (browser) {
+		const styles = getComputedStyle(document.documentElement);
+		const md = styles.getPropertyValue('--breakpoint-md');
+	}
 
 	let isOpen = $state(false);
+
+	let { isMobile } = getIsMobileState();
 </script>
 
-<div class="relative z-30 flex h-(--menu-height) border-t border-black bg-white">
+<div
+	class="fixed bottom-0 left-0 z-30 flex h-(--mobile-menu-height) w-full border-t border-black bg-white sm:h-(--menu-height) md:relative"
+>
 	<!-- MENU BUTTON -->
 	<button
 		class={[
@@ -23,17 +34,17 @@
 	<!-- NAV -->
 	{#if isOpen}
 		<nav
-			in:slide={{ axis: 'x', duration: 350 }}
-			out:slide={{ axis: 'x', delay: 200 }}
-			class="absolute left-full flex h-full w-[75svw] border-t border-black bg-white"
+			in:slide={{ axis: isMobile ? 'y' : 'x', duration: 350 }}
+			out:slide={{ axis: isMobile ? 'y' : 'x', delay: 200 }}
+			class="fixed flex h-[calc(100svh-var(--mobile-menu-height))] w-full flex-col gap-y-3 border-t border-black bg-white pt-30 max-md:-top-full max-sm:top-0 max-sm:left-0 sm:absolute sm:h-full sm:flex-row md:left-full md:w-[75svw] md:pt-0"
 			data-sveltekit-preload-data="hover"
 		>
 			<img
 				in:fly={{ delay: 280, y: 200, duration: 300 }}
 				out:fly={{ y: 200, duration: 250 }}
-				class="absolute -top-px left-1/6 z-10 max-w-89.5 -translate-y-full"
+				class="absolute -top-px left-1/6 z-10 hidden -translate-y-full sm:block md:max-w-89.5"
 				src={bohdanTV}
-				alt="Bohdan Krushelnitsky with a cig in mouth holding a retro tv like he is trying to sell it to you for not that reasonable price"
+				alt="Bohdan Krushelnitsky with a cig in his mouth holding a retro tv like he is trying to peddle it to you for not very reasonable price"
 			/>
 			<NavLink href={EPages.HOME} class="w-full">Головна</NavLink>
 			<NavLink href={EPages.WORKS} class="w-full">Роботи</NavLink>
