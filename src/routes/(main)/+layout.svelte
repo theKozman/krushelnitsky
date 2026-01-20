@@ -3,6 +3,18 @@
 	import { Footer, Microchel } from '$lib';
 	import { page } from '$app/state';
 	import { EPages } from '$lib/pages';
+	import { onNavigate } from '$app/navigation';
+
+	onNavigate((navigation) => {
+		if (!document.startViewTransition) return;
+
+		return new Promise((resolve) => {
+			document.startViewTransition(async () => {
+				resolve();
+				await navigation.complete;
+			});
+		});
+	});
 
 	let { children } = $props();
 

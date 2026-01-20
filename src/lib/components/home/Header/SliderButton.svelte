@@ -10,7 +10,7 @@
 
 <div
 	class={classNames(
-		'h-2 w-9.25 border bg-white ',
-		active ? 'border-white opacity-100' : 'border-black opacity-60'
+		'h-0.5 w-9.25 border bg-white opacity-60',
+		active ? 'border-white' : 'border-black'
 	)}
 ></div>

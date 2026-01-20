@@ -10,8 +10,8 @@
 <a
 	href={`${page.url.pathname}#${anchor}`}
 	class={[
-		'flex justify-between not-italic active:italic',
-		page.url.hash.split('#')[1] === anchor && 'text-[#1321E8] italic!'
+		'flex justify-between not-italic hover:opacity-75 active:italic',
+		page.url.hash.split('#')[1] === anchor && 'text-[#1321E8] italic! hover:opacity-100'
 	]}
 >
 	<span class="max-w-24">{label}</span>

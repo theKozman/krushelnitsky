@@ -1,5 +1,6 @@
 <script>
 	import { MakeLove, Ornament } from '$lib/components';
+	import { fade } from 'svelte/transition';
 	import SubmenuRibbon from '../SubmenuRibbon/SubmenuRibbon.svelte';
 </script>
 

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Ornament, SideVideo } from '$lib/components';
+	import { fade } from 'svelte/transition';
 </script>
 
 <div class="flex h-full justify-between">

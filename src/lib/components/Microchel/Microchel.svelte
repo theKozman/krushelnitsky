@@ -10,7 +10,7 @@
 </script>
 
 <figure aria-label="3d bogdan rotating in T-pose" class={['w-22', className]}>
-	<a href={EPages.ABOUT} draggable="false">
+	<a href={EPages.ABOUT} draggable="false" data-sveltekit-preload-data="hover">
 		<img
 			width="88"
 			height="120"

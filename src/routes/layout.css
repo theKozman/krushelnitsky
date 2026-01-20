@@ -15,6 +15,11 @@
 		@apply font-mono;
 	}
 
+	::view-transition-old(root),
+	::view-transition-new(root) {
+		animation-duration: 400ms;
+	}
+
 	button,
 	a {
 		@apply font-serif italic;

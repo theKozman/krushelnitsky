@@ -10,9 +10,9 @@
 {/snippet}
 
 <section
-	class="relative flex h-[calc(100svh-var(--footer-height))] flex-col items-start justify-between border border-black"
+	class="relative flex min-h-[calc(100svh-var(--footer-height))] flex-col items-start justify-between border border-black"
 >
-	<div class="flex h-full w-full flex-col justify-center px-6">
+	<div class="flex w-full grow flex-col justify-center px-6">
 		<div class="flex w-full items-end justify-start gap-12 align-middle">
 			{@render name('Богдан', ['leading-[0.75]!'])}
 			<p class="max-w-84">

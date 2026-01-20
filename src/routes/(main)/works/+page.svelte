@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { BetterCallNice, PageTemplate, StyleZip, TabList, MakeLoveWork } from '$lib';
 	import { setTabsState } from '$lib/stores';
+	import { blur, crossfade, fade } from 'svelte/transition';
 
 	const tabsState = setTabsState({
 		initialState: [
@@ -28,14 +29,22 @@
 	const { currentTab } = $derived(tabsState);
 </script>
 
-<section class="relative flex h-[calc(100svh-var(--footer-height))] flex-col border border-black">
+<section
+	class="relative flex min-h-[calc(100svh-var(--footer-height))] flex-col border border-black"
+>
 	<PageTemplate>
 		{#snippet sidebar()}
 			<TabList />
 		{/snippet}
 
 		{#if currentTab}
-			<currentTab.component />
+			{#key currentTab.component}
+				<div class="h-full" in:fade={{ duration: 200 }}>
+					<div class="flex h-full flex-col">
+						<currentTab.component />
+					</div>
+				</div>
+			{/key}
 		{/if}
 	</PageTemplate>
 </section>
