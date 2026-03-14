@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { Header, MakeLove, HeroRibbon, PageTemplate } from '$lib/components';
+	import { Header, HorizontalOverlayedVideo, HeroRibbon, PageTemplate } from '$lib/components';
+	import { videosState } from '$lib/states/videos';
 </script>
 
 <section
@@ -10,7 +11,7 @@
 			<Header />
 		{/snippet}
 		<div class="hidden grow flex-col md:flex">
-			<MakeLove />
+			<HorizontalOverlayedVideo videoItem={videosState[0]} />
 			<HeroRibbon />
 		</div>
 	</PageTemplate>
