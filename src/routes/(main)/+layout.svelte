@@ -4,6 +4,7 @@
 	import { page } from '$app/state';
 	import { EPages } from '$lib/pages';
 	import { onNavigate } from '$app/navigation';
+	import { menuState } from '$lib/states/menu';
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
@@ -18,7 +19,7 @@
 
 	let { children } = $props();
 
-	setMenuState();
+	setMenuState(undefined, menuState);
 	setIsMobileState();
 </script>
 

@@ -5,9 +5,10 @@ interface IsMobileState {
 }
 
 class IsMobile implements IsMobileState {
-	isMobile = $state<IsMobileState['isMobile']>(null);
+	isMobile;
 
 	constructor() {
+		this.isMobile = $state<IsMobileState['isMobile']>(null);
 		$effect(() => {
 			const checkScreenSize = () => {
 				const styles = getComputedStyle(document.documentElement);
@@ -17,7 +18,8 @@ class IsMobile implements IsMobileState {
 
 				const remWindowWidth = window.innerWidth / 16;
 
-				this.isMobile = remWindowWidth < mdValue;
+				console.log('we do be updatin');
+				this.setIsMobile(remWindowWidth < mdValue);
 			};
 
 			// TODO: this doesn't work and it doesn't update isMobile correctly
@@ -30,6 +32,11 @@ class IsMobile implements IsMobileState {
 			return () => window.removeEventListener('resize', checkScreenSize);
 		});
 	}
+
+	setIsMobile = (value: boolean) => {
+		console.log('setter runs');
+		this.isMobile = value;
+	};
 }
 
 const DEFAULT_KEY = '$_is_mobile_state';

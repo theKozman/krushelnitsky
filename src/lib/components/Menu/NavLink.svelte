@@ -2,14 +2,17 @@
 	import { page } from '$app/state';
 	import classNames from 'classnames';
 	import type { Snippet } from 'svelte';
+	import type { MouseEventHandler } from 'svelte/elements';
 
 	type Props = {
 		href: string;
 		class?: string;
 		children: Snippet;
+		onmouseenter?: MouseEventHandler<HTMLAnchorElement>;
+		onmouseleave?: MouseEventHandler<HTMLAnchorElement>;
 	};
 
-	const { href, class: className, children }: Props = $props();
+	const { href, class: className, children, onmouseenter, onmouseleave }: Props = $props();
 	// TODO: current path link
 </script>
 
@@ -20,6 +23,8 @@
 		className
 	)}
 	{href}
+	{onmouseenter}
+	{onmouseleave}
 >
 	{@render children()}
 </a>

@@ -1,10 +1,6 @@
+import { menuState } from '$lib/states/menu';
+import type { MenuSlide } from '$lib/types';
 import { getContext, setContext } from 'svelte';
-
-type MenuSlide = {
-	key: string;
-	img: string;
-	preview: string;
-};
 
 interface MenuState {
 	slides: MenuSlide[];
@@ -33,11 +29,11 @@ class Menu implements MenuState {
 
 const DEFAULT_KEY = '$_menu_state';
 
-export const getMenuState = (key = DEFAULT_KEY) => {
-	return getContext(key);
+export const setMenuState = (key = DEFAULT_KEY, state: MenuSlide[] = []) => {
+	const menuClassState = new Menu(state);
+	return setContext(key, menuClassState);
 };
 
-export const setMenuState = (key = DEFAULT_KEY) => {
-	const menuState = new Menu([]);
-	return setContext(key, menuState);
+export const getMenuState = (key = DEFAULT_KEY) => {
+	return getContext<ReturnType<typeof setMenuState>>(key);
 };

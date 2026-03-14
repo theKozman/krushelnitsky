@@ -5,7 +5,7 @@
 	import NavLink from './NavLink.svelte';
 	import { EPages } from '$lib/pages';
 	import { browser } from '$app/environment';
-	import { getIsMobileState } from '$lib/stores';
+	import { getIsMobileState, getMenuState } from '$lib/stores';
 
 	if (browser) {
 		const styles = getComputedStyle(document.documentElement);
@@ -14,7 +14,9 @@
 
 	let isOpen = $state(false);
 
-	let { isMobile } = getIsMobileState();
+	let isMobileState = getIsMobileState();
+	let menuState = getMenuState();
+	let { slides, activeSlide, setActiveSlide } = $derived(menuState);
 </script>
 
 <div
@@ -34,22 +36,26 @@
 	<!-- NAV -->
 	{#if isOpen}
 		<nav
-			in:slide={{ axis: isMobile ? 'y' : 'x', duration: 350 }}
-			out:slide={{ axis: isMobile ? 'y' : 'x', delay: 200 }}
+			in:slide={{ axis: isMobileState.isMobile ? 'y' : 'x', duration: 350 }}
+			out:slide={{ axis: isMobileState.isMobile ? 'y' : 'x', delay: 200 }}
 			class="fixed flex h-[calc(100svh-var(--mobile-menu-height))] w-full flex-col gap-y-3 border-t border-black bg-white pt-30 max-md:-top-full max-sm:top-0 max-sm:left-0 sm:absolute sm:h-full sm:flex-row md:left-full md:w-[75svw] md:pt-0"
 			data-sveltekit-preload-data="hover"
 		>
 			<img
 				in:fly={{ delay: 280, y: 200, duration: 300 }}
 				out:fly={{ y: 200, duration: 250 }}
-				class="absolute -top-px left-1/6 z-10 hidden -translate-y-full sm:block md:max-w-89.5"
-				src={bohdanTV}
-				alt="Bohdan Krushelnitsky with a cig in his mouth holding a retro tv like he is trying to peddle it to you for not very reasonable price"
+				class={[
+					'absolute -top-px left-1/6 z-10 hidden -translate-y-full sm:block md:max-w-89.5 ',
+					activeSlide?.imgStyles
+				]}
+				src={activeSlide?.img}
+				alt={activeSlide?.alt}
 			/>
-			<NavLink href={EPages.HOME} class="w-full">Головна</NavLink>
-			<NavLink href={EPages.WORKS} class="w-full">Роботи</NavLink>
-			<NavLink href={EPages.FILM} class="w-full">Фільм</NavLink>
-			<NavLink href={EPages.ABOUT} class="w-full">Інфо</NavLink>
+			{#each slides as slide}
+				<NavLink href={slide.href} class="w-full" onmouseenter={() => setActiveSlide(slide.key)}>
+					{slide.label}
+				</NavLink>
+			{/each}
 		</nav>
 	{/if}
 </div>
