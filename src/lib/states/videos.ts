@@ -51,7 +51,7 @@ export const videosState: VideoItem[] = [
 	{
 		key: 'millenial',
 		type: 'horizontal',
-		title: 'Make Love Not Babies',
+		title: 'Make Buba Not Labuba',
 		subtitle: 'Commercial video',
 		for: 'sanja.jeweler',
 		budget: '$0',
