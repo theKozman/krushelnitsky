@@ -1,6 +1,16 @@
 <script lang="ts">
 	import { Header, HorizontalOverlayedVideo, HeroRibbon, PageTemplate } from '$lib/components';
 	import { videosState } from '$lib/states/videos';
+	import {
+		EVideoSelectorKeys,
+		getVideoSelectorState,
+		setVideoSelectorState
+	} from '$lib/stores/video-selection.svelte';
+
+	const videoSelector = setVideoSelectorState(
+		EVideoSelectorKeys.HORIZONTAL,
+		videosState.filter((v) => v.type === 'horizontal')
+	);
 </script>
 
 <section
@@ -11,7 +21,7 @@
 			<Header />
 		{/snippet}
 		<div class="hidden grow flex-col md:flex">
-			<HorizontalOverlayedVideo videoItem={videosState[0]} />
+			<HorizontalOverlayedVideo videoItem={videoSelector.activeVideo} />
 			<HeroRibbon />
 		</div>
 	</PageTemplate>

@@ -1,16 +1,21 @@
 <script lang="ts">
 	import type { VideoItem } from '$lib/types';
+	import { VideoPlayer } from '$lib/components';
 
 	type Props = {
 		videoItem: VideoItem;
 	};
 
-	const { videoItem }: Props = $props();
+	let { videoItem }: Props = $props();
+
+	let isMuted = $state(true);
 </script>
 
 <div class="relative h-full grow">
 	<!-- VIDEO CONTAINER -->
-	<div class="h-full w-full bg-[url($lib/assets/img/placeholders/hero.jpg)] bg-cover"></div>
+	<div class="h-full w-full bg-[url($lib/assets/img/placeholders/hero.jpg)] bg-cover">
+		<VideoPlayer src={videoItem.src} muted={isMuted} />
+	</div>
 
 	<!-- OVERLAY -->
 	<div
@@ -26,7 +31,12 @@
 
 		<div class="col-span-3 row-start-3 flex w-full items-end justify-between">
 			<div class="flex flex-col gap-3.5">
-				<span class="italic">Unmute</span>
+				<button
+					class="inline cursor-pointer appearance-none text-left font-light italic"
+					onclick={() => (isMuted = !isMuted)}
+				>
+					{isMuted ? 'Unmute' : 'Mute'}
+				</button>
 				<span class="">Gear:{videoItem.gear.map(({ label }) => label).join(',')}</span>
 			</div>
 			<span>For:{videoItem.for}</span>

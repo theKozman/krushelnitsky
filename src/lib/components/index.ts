@@ -7,6 +7,7 @@ export { default as HorizontalOverlayedVideo } from './HorizontalOverlayedVideo/
 export { default as SubmenuRibbon } from './SubmenuRibbon/SubmenuRibbon.svelte';
 export { default as Ornament } from './Ornament/Ornament.svelte';
 export { default as SideVideo } from './SideVideo/SideVideo.svelte';
+export { default as VideoPlayer } from './VideoPlayer/VideoPlayer.svelte';
 
 // Main Page
 export { default as Header } from './home/Header/Header.svelte';
