@@ -13,7 +13,7 @@
 
 <div class="relative h-full grow">
 	<!-- VIDEO CONTAINER -->
-	<div class="h-full w-full bg-[url($lib/assets/img/placeholders/hero.jpg)] bg-cover">
+	<div class="h-full w-full bg-cover">
 		<VideoPlayer src={videoItem.src} muted={isMuted} />
 	</div>
 

@@ -24,14 +24,16 @@
 	});
 </script>
 
-<video
-	bind:this={video}
-	disablepictureinpicture
-	class="h-full w-full object-cover"
-	controls={false}
-	autoplay
-	loop
-	{muted}
->
-	<source {src} type="video/mp4" />
-</video>
+<div class="relative h-full w-full bg-cyan-500">
+	<video
+		bind:this={video}
+		disablepictureinpicture
+		class="absolute top-0 right-0 bottom-0 left-0 h-full w-full object-cover"
+		controls={false}
+		autoplay
+		loop
+		{muted}
+	>
+		<source {src} type="video/mp4" />
+	</video>
+</div>

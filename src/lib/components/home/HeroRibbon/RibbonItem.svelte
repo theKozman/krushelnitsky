@@ -12,7 +12,7 @@
 </script>
 
 <div
-	class="h-41.5 w-1/4 cursor-pointer"
+	class="h-39.75 w-1/4 cursor-pointer"
 	onclick={() => onclick(key)}
 	onkeyup={(e) => e.key === 'Enter' && onclick(key)}
 	role="button"
