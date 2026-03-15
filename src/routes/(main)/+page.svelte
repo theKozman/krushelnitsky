@@ -1,16 +1,8 @@
 <script lang="ts">
 	import { Header, OverlayedVideo, HeroRibbon, PageTemplate } from '$lib/components';
-	import { videosState } from '$lib/states/videos';
-	import {
-		EVideoSelectorKeys,
-		getVideoSelectorState,
-		setVideoSelectorState
-	} from '$lib/stores/video-selection.svelte';
+	import { EVideoSelectorKeys, getVideoSelectorState } from '$lib/stores/video-selection.svelte';
 
-	const videoSelector = setVideoSelectorState(
-		EVideoSelectorKeys.HORIZONTAL,
-		videosState.filter((v) => v.type === 'horizontal')
-	);
+	const videoSelector = getVideoSelectorState(EVideoSelectorKeys.HORIZONTAL);
 </script>
 
 <section

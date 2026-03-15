@@ -1,39 +1,27 @@
 <script>
+	import OverlayedVideo from '$lib/components/OverlayedVideo/OverlayedVideo.svelte';
+	import { EVideoSelectorKeys, getVideoSelectorState } from '$lib/stores/video-selection.svelte';
 	import SliderButton from './SliderButton.svelte';
+
+	const videoSelector = getVideoSelectorState(EVideoSelectorKeys.VERTICAL);
+	let { link, ...activeVideo } = $derived(videoSelector.activeVideo);
 </script>
 
 <div class="relative grow border-r border-black">
 	<!-- VIDEO CONTAINER -->
-	<div
-		class="h-[calc(100svh-var(--mobile-menu-height))] w-full bg-[url($lib/assets/img/placeholders/header.jpg)] bg-cover md:h-full"
-	></div>
+	<OverlayedVideo videoItem={activeVideo} mode="vertical" />
 
 	<!-- OVERLAY -->
 	<div
 		class="absolute top-0 left-0 grid h-full w-full grid-cols-3 grid-rows-3 flex-col justify-between px-6 pt-2 pb-6 text-white"
 	>
-		<nav class="col-span-3 flex w-full justify-between gap-2">
-			<SliderButton active />
-			<SliderButton />
-			<SliderButton />
-			<SliderButton />
-			<SliderButton />
-			<SliderButton />
-			<SliderButton />
+		<nav class="col-span-3 flex w-full justify-start gap-2">
+			{#each videoSelector.videos as video}
+				<SliderButton
+					active={video.key === videoSelector.activeVideo.key}
+					onclick={() => videoSelector.setActiveVideo(video.key)}
+				/>
+			{/each}
 		</nav>
-
-		<div class="col-span-3 flex flex-col justify-center">
-			<span class="uppercase">The Smouldering</span>
-			<span>Short Film</span>
-		</div>
-
-		<div class="col-span-3 flex w-full flex-col justify-end gap-6">
-			<span>For:art</span>
-
-			<div class=" flex w-full justify-between gap-4">
-				<span>Gear:SONY A7III</span>
-				<span>Budget:$0</span>
-			</div>
-		</div>
 	</div>
 </div>

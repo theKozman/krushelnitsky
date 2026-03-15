@@ -14,6 +14,7 @@ export type VideoItem = {
 	type: 'horizontal' | 'vertical';
 	title: string;
 	subtitle?: string;
+	link?: string;
 	about?: string;
 	src: string;
 	for?: string;

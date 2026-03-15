@@ -2,6 +2,8 @@ import ringVideo from '$lib/assets/videos/horizontal/ring.mp4';
 import barVideo from '$lib/assets/videos/horizontal/backdoor-bar.mp4';
 import sinCityVideo from '$lib/assets/videos/horizontal/sincity.mp4';
 import millenialVideo from '$lib/assets/videos/horizontal/millenial.mp4';
+import eastGearVideo from '$lib/assets/videos/vertical/east-gear.mp4';
+import militaristVideo from '$lib/assets/videos/vertical/militarist.mp4';
 
 import type { VideoItem } from '$lib/types';
 
@@ -56,6 +58,34 @@ export const videosState: VideoItem[] = [
 		for: 'sanja.jeweler',
 		budget: '$0',
 		src: millenialVideo,
+		gear: [
+			{
+				label: 'SONY A7III'
+			}
+		]
+	},
+	{
+		key: 'east-gear',
+		type: 'vertical',
+		title: 'East Gear',
+		subtitle: 'Commercial video',
+		for: 'sanja.jeweler',
+		budget: '$0',
+		src: eastGearVideo,
+		gear: [
+			{
+				label: 'SONY A7III'
+			}
+		]
+	},
+	{
+		key: 'militarist',
+		type: 'vertical',
+		title: 'Militarist',
+		subtitle: 'Commercial video',
+		for: 'sanja.jeweler',
+		budget: '$0',
+		src: militaristVideo,
 		gear: [
 			{
 				label: 'SONY A7III'

@@ -5,6 +5,8 @@
 	import { EPages } from '$lib/pages';
 	import { onNavigate } from '$app/navigation';
 	import { menuState } from '$lib/states/menu';
+	import { EVideoSelectorKeys, setVideoSelectorState } from '$lib/stores/video-selection.svelte';
+	import { videosState } from '$lib/states/videos';
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
@@ -21,6 +23,14 @@
 
 	setMenuState(undefined, menuState);
 	setIsMobileState();
+	setVideoSelectorState(
+		EVideoSelectorKeys.HORIZONTAL,
+		videosState.filter((v) => v.type === 'horizontal')
+	);
+	setVideoSelectorState(
+		EVideoSelectorKeys.VERTICAL,
+		videosState.filter((v) => v.type === 'vertical')
+	);
 </script>
 
 <main class="">

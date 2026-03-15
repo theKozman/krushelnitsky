@@ -30,18 +30,19 @@ class VideoSelector implements VideoSelectorState {
 }
 
 export enum EVideoSelectorKeys {
-	HORIZONTAL = '$_video_selector_vertical',
+	HORIZONTAL = '$_video_selector_horizontal',
 	VERTICAL = '$_video_selector_vertical',
 	DEFAULT = '$_video_selector_state'
 }
 
-const DEFAULT_KEY = '$_video_selector_state';
-
-export const setVideoSelectorState = (key = DEFAULT_KEY, state: VideoItem[] = []) => {
+export const setVideoSelectorState = (
+	key = EVideoSelectorKeys.DEFAULT,
+	state: VideoItem[] = []
+) => {
 	const videoSelectorClassState = new VideoSelector(state);
 	return setContext(key, videoSelectorClassState);
 };
 
-export const getVideoSelectorState = (key = DEFAULT_KEY) => {
+export const getVideoSelectorState = (key = EVideoSelectorKeys.DEFAULT) => {
 	return getContext<ReturnType<typeof setVideoSelectorState>>(key);
 };
