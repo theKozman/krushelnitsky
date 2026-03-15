@@ -13,9 +13,11 @@
 
 <div class="relative h-full grow">
 	<!-- VIDEO CONTAINER -->
-	<div class="h-full w-full bg-cover">
-		<VideoPlayer src={videoItem.src} muted={isMuted} />
-	</div>
+	{#key videoItem.key}
+		<div class="h-full w-full bg-cover">
+			<VideoPlayer src={videoItem.src} muted={isMuted} />
+		</div>
+	{/key}
 
 	<!-- OVERLAY -->
 	<div

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Header, HorizontalOverlayedVideo, HeroRibbon, PageTemplate } from '$lib/components';
+	import { Header, OverlayedVideo, HeroRibbon, PageTemplate } from '$lib/components';
 	import { videosState } from '$lib/states/videos';
 	import {
 		EVideoSelectorKeys,
@@ -21,7 +21,7 @@
 			<Header />
 		{/snippet}
 		<div class="hidden grow flex-col md:flex">
-			<HorizontalOverlayedVideo videoItem={videoSelector.activeVideo} />
+			<OverlayedVideo videoItem={videoSelector.activeVideo} />
 			<HeroRibbon />
 		</div>
 	</PageTemplate>

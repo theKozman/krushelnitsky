@@ -3,7 +3,7 @@ export { default as PageTemplate } from './PageTemplate/PageTempalte.svelte';
 export { default as Footer } from './Footer/Footer.svelte';
 export { default as Menu } from './Menu/Menu.svelte';
 export { default as Microchel } from './Microchel/Microchel.svelte';
-export { default as HorizontalOverlayedVideo } from './HorizontalOverlayedVideo/HorizontalOverlayedVideo.svelte';
+export { default as OverlayedVideo } from './OverlayedVideo/OverlayedVideo.svelte';
 export { default as SubmenuRibbon } from './SubmenuRibbon/SubmenuRibbon.svelte';
 export { default as Ornament } from './Ornament/Ornament.svelte';
 export { default as SideVideo } from './SideVideo/SideVideo.svelte';

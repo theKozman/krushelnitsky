@@ -5,14 +5,15 @@
 		key: string;
 		src: string;
 		pause?: boolean;
+		inactive?: boolean;
 		onclick: (key: string) => void;
 	};
 
-	const { src, key, pause, onclick }: Props = $props();
+	const { src, key, pause, inactive, onclick }: Props = $props();
 </script>
 
 <div
-	class="h-39.75 w-1/4 cursor-pointer"
+	class={['h-39.75 w-1/4 cursor-pointer', inactive && 'sepia']}
 	onclick={() => onclick(key)}
 	onkeyup={(e) => e.key === 'Enter' && onclick(key)}
 	role="button"

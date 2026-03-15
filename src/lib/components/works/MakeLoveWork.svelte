@@ -1,11 +1,11 @@
 <script>
-	import { HorizontalOverlayedVideo, Ornament } from '$lib/components';
+	import { OverlayedVideo, Ornament } from '$lib/components';
 	import { fade } from 'svelte/transition';
 	import SubmenuRibbon from '../SubmenuRibbon/SubmenuRibbon.svelte';
 	import { videosState } from '$lib/states/videos';
 </script>
 
-<HorizontalOverlayedVideo videoItem={videosState[0]} />
+<OverlayedVideo videoItem={videosState[0]} />
 <SubmenuRibbon>
 	<div class="flex w-full justify-start gap-10 py-6 pr-6 pl-4">
 		<p class="max-w-75">

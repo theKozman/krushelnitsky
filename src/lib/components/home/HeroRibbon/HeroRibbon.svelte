@@ -16,6 +16,7 @@
 			src={video.src}
 			onclick={videoSelector.setActiveVideo}
 			pause={videoSelector.activeVideo.key === video.key}
+			inactive={videoSelector.activeVideo.key === video.key}
 		/>
 	{/each}
 </div>

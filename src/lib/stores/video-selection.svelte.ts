@@ -23,7 +23,6 @@ class VideoSelector implements VideoSelectorState {
 	}
 
 	setActiveVideo = (key: string) => {
-		console.log('KEY', key);
 		const newVideo = this.videos.find((s) => s.key === key) || null;
 		if (!newVideo) return;
 		this.activeVideo = newVideo;

@@ -18,7 +18,6 @@ class IsMobile implements IsMobileState {
 
 				const remWindowWidth = window.innerWidth / 16;
 
-				console.log('we do be updatin');
 				this.setIsMobile(remWindowWidth < mdValue);
 			};
 
@@ -34,7 +33,6 @@ class IsMobile implements IsMobileState {
 	}
 
 	setIsMobile = (value: boolean) => {
-		console.log('setter runs');
 		this.isMobile = value;
 	};
 }
