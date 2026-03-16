@@ -1,13 +1,11 @@
 <script lang="ts">
-	import classNames from 'classnames';
-
 	type Props = {
 		active?: boolean;
+		progress: number;
 		onclick?: () => void;
 	};
 
-	const { active, onclick }: Props = $props();
-	$inspect(active);
+	const { active, progress, onclick }: Props = $props();
 </script>
 
 <button
@@ -15,11 +13,12 @@
 	{onclick}
 	aria-label="slider-button"
 >
-	<div
-		class={[
-			'h-0.5 bg-white transition-[height] group-hover:h-full',
-			active && 'h-full',
-			active ? 'bg-white!' : 'bg-black!'
-		]}
-	></div>
+	<div class={['h-0.5 bg-black transition-[height] group-hover:h-full', active && 'h-full']}>
+		{#if active}
+			<div
+				class="h-full w-full origin-left scale-x-0 bg-white will-change-transform"
+				style:scale={`${progress}% 100%`}
+			></div>
+		{/if}
+	</div>
 </button>
